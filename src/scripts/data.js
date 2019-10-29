@@ -13,9 +13,9 @@ const API = {
     const mood = document.getElementById("mood").value
     if (date === "" || subject === "" || entry === "") {
       alert("Required fields must be filled out.")
-    } if (subject.length >= 20) {
+    } if (subject.length >= 30) {
       alert("Concepts field length is too long. Please shorten message.")
-    }else {
+    } else {
       let newJournalEntry = {
         "date": date,
         "concept": subject,
@@ -29,8 +29,9 @@ const API = {
         },
         body: JSON.stringify(newJournalEntry)
       })
-      this.getJournalEntries()
-        .then(response => renderDom.renderJournalEntries(response))
+      return fetch("http://localhost:3000/entries")
+      .then(response => response.json())
+      .then(response => renderDom.renderJournalEntries(response))
     }
   }
 }

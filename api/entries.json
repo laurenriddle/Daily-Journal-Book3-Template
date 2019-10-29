@@ -20,6 +20,13 @@
       "concept": "CSS Selectors",
       "entry": "How to use classes and ids to apply CSS to elements on the DOM",
       "mood": "Ok"
+    },
+    {
+      "date": "2019-10-29",
+      "concept": "Factory Functions",
+      "entry": "Factory functions are functions that return objects.",
+      "mood": "Amazing",
+      "id": 4
     }
   ]
 }
