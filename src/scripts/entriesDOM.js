@@ -3,6 +3,7 @@
 
     Arguments: entries (array of objects)
 */
+import entryManager from "./entryComponent.js"
 const renderDom = {
   renderJournalEntries(entries) {
     let HtmlForAllEntries = ""
@@ -14,3 +15,5 @@ const renderDom = {
     logArticle.innerHTML = HtmlForAllEntries
   }
 }
+
+export default renderDom
