@@ -13,7 +13,9 @@ const API = {
     const mood = document.getElementById("mood").value
     if (date === "" || subject === "" || entry === "") {
       alert("Required fields must be filled out.")
-    } else {
+    } if (subject.length >= 20) {
+      alert("Concepts field length is too long. Please shorten message.")
+    }else {
       let newJournalEntry = {
         "date": date,
         "concept": subject,
