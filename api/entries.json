@@ -20,27 +20,6 @@
       "concept": "CSS Selectors",
       "entry": "How to use classes and ids to apply CSS to elements on the DOM",
       "mood": "Ok"
-    },
-    {
-      "date": "",
-      "concept": "",
-      "entry": "",
-      "mood": "Amazing",
-      "id": 4
-    },
-    {
-      "date": "2019-10-29",
-      "concept": "test",
-      "entry": "Test entry",
-      "mood": "Amazing",
-      "id": 5
-    },
-    {
-      "date": "2019-10-29",
-      "concept": "This is working!!!",
-      "entry": "YAY!!!",
-      "mood": "Amazing",
-      "id": 6
     }
   ]
 }

@@ -1,4 +1,6 @@
 
+import renderDom from "./entriesDOM.js"
+
 const API = {
   getJournalEntries() {
     return fetch("http://localhost:3000/entries")
@@ -22,7 +24,8 @@ const API = {
       },
       body: JSON.stringify(newJournalEntry)
     })
-  }
+    this.getJournalEntries()
+    .then(response => renderDom.renderJournalEntries(response))}
 }
 
 export default API
