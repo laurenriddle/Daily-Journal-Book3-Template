@@ -8,7 +8,6 @@
 
 import API from "./data.js"
 import renderDom from "./entriesDOM.js"
-import createNewEntry from "./createNewEntry.js"
 
 
 API.getJournalEntries()
@@ -16,4 +15,4 @@ API.getJournalEntries()
 
 
 const button = document.querySelector("button")
-button.addEventListener("click", )
+button.addEventListener("click", API.saveJournalEntry)
