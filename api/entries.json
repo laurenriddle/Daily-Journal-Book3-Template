@@ -25,18 +25,21 @@
       "date": "",
       "concept": "",
       "entry": "",
+      "mood": "Amazing",
       "id": 4
     },
     {
-      "date": "",
-      "concept": "",
-      "entry": "",
+      "date": "2019-10-29",
+      "concept": "test",
+      "entry": "Test entry",
+      "mood": "Amazing",
       "id": 5
     },
     {
-      "date": "",
-      "concept": "",
-      "entry": "",
+      "date": "2019-10-29",
+      "concept": "This is working!!!",
+      "entry": "YAY!!!",
+      "mood": "Amazing",
       "id": 6
     }
   ]
