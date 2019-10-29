@@ -4,7 +4,7 @@ const createNewEntry = {
     subject: document.getElementById("subject").value,
     entry: document.getElementById("entry").value,
     mood: document.getElementsByClassName("mood").value,
-    createEntryObject = () => {
+    createEntryObject: () => {
         return {
             "date": `${date}`,
             "concept": `${subject}`,
