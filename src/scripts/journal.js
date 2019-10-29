@@ -12,3 +12,8 @@ import renderDom from "./entriesDOM.js"
 
 API.getJournalEntries()
 .then(response => renderDom.renderJournalEntries(response))
+
+
+const button = document.querySelector("button")
+button.addEventListener("click", API.saveJournalEntry)
+
