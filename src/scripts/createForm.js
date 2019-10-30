@@ -1,6 +1,7 @@
-const buildAndAppendSearchForm = () => {
-   const searchForm = 
-   `<h1>Daily Journal</h1>
+const htmlElements = {
+    buildAndAppendSearchForm() {
+        const searchForm =
+            `<h1>Daily Journal</h1>
     <form>
         <fieldset>
             <label for="date-input">Date of entry:</label>
@@ -24,8 +25,32 @@ const buildAndAppendSearchForm = () => {
         </fieldset>
         </form>
         <button>Record Journal Entry</button>`
-   const searchFormContainer = document.querySelector("#searchFormContainer")
-    searchFormContainer.innerHTML = searchForm
+        const searchFormContainer = document.querySelector("#searchFormContainer")
+        searchFormContainer.innerHTML = searchForm
+    }, buildAndAppendFilterElement() {
+        const filterHtml =
+            `
+        <fieldset id="radioButtons">
+            <legend>Filter Journal Entries By Mood</legend>
+            <div id="radioContainer">
+            <div>
+                <input type="radio" name="moodButton" value="amazing">
+                <label for="date-input">Amazing</label>
+            </div>
+            <div>
+                <input type="radio" name="moodButton" value="great">
+                <label for="date-input">Great</label>
+            </div>
+            <div>
+                <input type="radio" name="moodButton" value="ok">
+                <label for="date-input">Ok</label>
+            </div>
+        </div>
+        </fieldset>
+        
+        `
+        const filterContainer = document.querySelector("#filterContainer")
+        filterContainer.innerHTML = filterHtml
+    }
 }
-
-export default buildAndAppendSearchForm
+export default htmlElements

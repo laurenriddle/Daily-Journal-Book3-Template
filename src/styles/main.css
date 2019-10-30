@@ -38,3 +38,16 @@ select {
     height: 35px;
     font-size: 15px;
 }
+#radioContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+#radioButtons input {
+    width: 10%;
+}
+#radioButtons div {
+    flex-basis: 33%;
+}
