@@ -1,6 +1,11 @@
 h1 {
     text-align: center;
     background-color: rgb(92, 162, 184);
+    padding: 10px;
+    font-size: 40px;
+}
+#journalEntries {
+margin-top: 50px;
 }
 fieldset {
     margin: 15px auto;
@@ -13,4 +18,10 @@ input{
 button {
     padding: 15px auto;
     font-size: 20px;
+}
+section {
+    margin: 20px auto;
+    border: 2px solid black;
+    padding: 10px;
+    background-color: gainsboro;
 }
