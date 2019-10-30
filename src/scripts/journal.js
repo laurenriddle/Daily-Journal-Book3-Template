@@ -6,16 +6,16 @@
     to get the data and display it.
 */
 
-import buildAndAppendSearchForm from "./createForm.js"
+import htmlElements from "./createForm.js"
 import API from "./data.js"
 import renderDom from "./entriesDOM.js"
 import saveObject from "./saveEntry.js"
 
-
-buildAndAppendSearchForm()
+htmlElements.buildAndAppendSearchForm()
+htmlElements.buildAndAppendFilterElement()
 
 API.getJournalEntries()
-    .then(response => renderDom.renderJournalEntries(response))
+.then(response => renderDom.renderJournalEntries(response))
 
 const button = document.querySelector("button")
 button.addEventListener("click", saveObject.postEntry)
