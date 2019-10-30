@@ -1,31 +1,17 @@
 
-import renderDom from "./entriesDOM.js"
-
 const API = {
   getJournalEntries() {
     return fetch("http://localhost:3000/entries")
       .then(response => response.json())
   },
-  saveJournalEntry: () => {
-    const date = document.getElementById("date").value
-    const subject = document.getElementById("subject").value
-    const entry = document.getElementById("entry").value
-    const mood = document.getElementById("mood").value
-    let newJournalEntry = {
-      "date": date,
-      "concept": subject,
-      "entry": entry,
-      "mood": mood
-    }
-    fetch("http://localhost:3000/entries", { // Replace "url" with your API's URL
+  postObject(entry) {
+    return fetch("http://localhost:3000/entries", { // Replace "url" with your API's URL
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(newJournalEntry)
+      body: JSON.stringify(entry)
     })
-    this.getJournalEntries()
-    .then(response => renderDom.renderJournalEntries(response))}
+  }
 }
-
 export default API
