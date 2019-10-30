@@ -8,11 +8,11 @@ const buildAndAppendSearchForm = () => {
         </fieldset>
         <fieldset>
             <label for="concept-input">Concepts covered:</label>
-            <input type="text" name="concept-input" id="subject" pattern="[A-Za-z0-9(){}:;]+" required>
+            <input type="text" name="concept-input" id="subject" required>
         </fieldset>
         <fieldset>
             <label for="entry-input">Journal entry:</label>
-            <textarea name="entry-input" id="entry" pattern="[A-Za-z0-9(){}:;]+" required></textarea>
+            <textarea name="entry-input" id="entry" required></textarea>
         </fieldset>
         <fieldset>
             <label for="mood-input">Mood:</label>
