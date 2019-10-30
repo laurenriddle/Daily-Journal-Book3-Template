@@ -22,8 +22,8 @@ const buildAndAppendSearchForm = () => {
                 <option value="Ok">Ok</option>
             </select>
         </fieldset>
-        <button>Record Journal Entry</button>
-    </form>`
+        </form>
+        <button>Record Journal Entry</button>`
    const searchFormContainer = document.querySelector("#searchFormContainer")
     searchFormContainer.innerHTML = searchForm
 }
