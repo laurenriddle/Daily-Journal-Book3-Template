@@ -3,10 +3,10 @@ import API from "./data.js"
 
 const saveObject = {
     saveJournalEntry() {
-        const date = document.getElementById("date").value
-        const subject = document.getElementById("subject").value
-        const entry = document.getElementById("entry").value
-        const mood = document.getElementById("mood").value
+        const date = document.querySelector("#date").value
+        const subject = document.querySelector("#subject").value
+        const entry = document.querySelector("#entry").value
+        const mood = document.querySelector("#mood").value
         if (date === "" || subject === "" || entry === "") {
             alert("Required fields must be filled out.")
         } if (subject.length >= 30) {
