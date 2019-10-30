@@ -1,0 +1,16 @@
+h1 {
+    text-align: center;
+    background-color: rgb(92, 162, 184);
+}
+fieldset {
+    margin: 15px auto;
+    font-size: 20px;
+    background-color: rgba(201, 145, 61, 0.685);
+}
+input{
+    padding: 10px auto;
+}
+button {
+    padding: 15px auto;
+    font-size: 20px;
+}
