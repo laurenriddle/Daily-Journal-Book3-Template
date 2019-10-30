@@ -27,27 +27,6 @@
       "entry": "Factory functions are functions that return objects.",
       "mood": "Amazing",
       "id": 4
-    },
-    {
-      "date": "2019-10-29",
-      "concept": "test",
-      "entry": "test",
-      "mood": "Amazing",
-      "id": 5
-    },
-    {
-      "date": "",
-      "concept": "",
-      "entry": "",
-      "mood": "Amazing",
-      "id": 6
-    },
-    {
-      "date": "2019-10-29",
-      "concept": "test",
-      "entry": "testing",
-      "mood": "Amazing",
-      "id": 7
     }
   ]
 }
