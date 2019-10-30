@@ -19,4 +19,4 @@ API.getJournalEntries()
 
 
 const button = document.querySelector("button")
-button.addEventListener("click", saveObject.saveJournalEntry)
+button.addEventListener("click", saveObject.postEntry)

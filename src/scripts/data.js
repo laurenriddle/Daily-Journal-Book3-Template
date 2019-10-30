@@ -4,7 +4,7 @@ const API = {
     return fetch("http://localhost:3000/entries")
       .then(response => response.json())
   },
-  postObject(entry) {
+  saveJournalEntry(entry) {
     return fetch("http://localhost:3000/entries", { // Replace "url" with your API's URL
       method: "POST",
       headers: {
