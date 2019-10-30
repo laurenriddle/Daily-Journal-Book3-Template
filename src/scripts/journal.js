@@ -6,9 +6,11 @@
     to get the data and display it.
 */
 
+import buildAndAppendSearchForm from "./createForm.js"
 import API from "./data.js"
 import renderDom from "./entriesDOM.js"
 
+buildAndAppendSearchForm()
 
 API.getJournalEntries()
 .then(response => renderDom.renderJournalEntries(response))
