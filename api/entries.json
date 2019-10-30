@@ -30,8 +30,8 @@
     },
     {
       "date": "2019-10-30",
-      "concept": "QuerySelector",
-      "entry": "QuerySelector can be used to grab an HTML element.",
+      "concept": "HTML Elements",
+      "entry": "HTML elements are the bones of the webpage.",
       "mood": "Amazing",
       "id": 5
     }
