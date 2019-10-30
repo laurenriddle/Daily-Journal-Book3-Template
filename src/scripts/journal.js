@@ -17,6 +17,5 @@ buildAndAppendSearchForm()
 API.getJournalEntries()
     .then(response => renderDom.renderJournalEntries(response))
 
-
 const button = document.querySelector("button")
 button.addEventListener("click", saveObject.postEntry)

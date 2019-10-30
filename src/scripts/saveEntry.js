@@ -19,9 +19,10 @@ const saveObject = {
                 "mood": mood
             }
             API.saveJournalEntry(newJournalEntry)
-            API.getJournalEntries()
+                .then(API.getJournalEntries)
                 .then(response => renderDom.renderJournalEntries(response))
         }
+
     }
 }
 export default saveObject
