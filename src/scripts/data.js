@@ -36,13 +36,3 @@ const API = {
   }
 }
 export default API
-
-
-function () {
-  return {
-    "date": date,
-    "concept": subject,
-    "entry": entry,
-    "mood": mood
-  }
-}
