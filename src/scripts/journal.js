@@ -15,7 +15,17 @@ htmlElements.buildAndAppendSearchForm()
 htmlElements.buildAndAppendFilterElement()
 
 API.getJournalEntries()
-.then(response => renderDom.renderJournalEntries(response))
+    .then(response => renderDom.renderJournalEntries(response))
 
 const button = document.querySelector("button")
 button.addEventListener("click", saveObject.postEntry)
+
+
+const radioButtons = document.getElementsByName("moodButton")
+radioButtons.forEach( (button) => {
+    button.addEventListener("click", event => {
+        const mood = event.target.value
+        // console.log(mood)
+    })
+});
+
