@@ -34,16 +34,20 @@ const htmlElements = {
             <legend>Filter Journal Entries By Mood</legend>
             <div id="radioContainer">
             <div>
-                <input type="radio" name="moodButton" value="amazing">
+                <input type="radio" name="moodButton" value="Amazing">
                 <label for="date-input">Amazing</label>
             </div>
             <div>
-                <input type="radio" name="moodButton" value="great">
+                <input type="radio" name="moodButton" value="Great">
                 <label for="date-input">Great</label>
             </div>
             <div>
-                <input type="radio" name="moodButton" value="ok">
+                <input type="radio" name="moodButton" value="Ok">
                 <label for="date-input">Ok</label>
+            </div>
+            <div>
+                <input type="radio" name="moodButton" value="All">
+                <label for="date-input">All</label>
             </div>
         </div>
         </fieldset>

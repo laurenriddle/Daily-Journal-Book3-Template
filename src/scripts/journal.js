@@ -22,10 +22,34 @@ button.addEventListener("click", saveObject.postEntry)
 
 
 const radioButtons = document.getElementsByName("moodButton")
-radioButtons.forEach( (button) => {
+
+
+radioButtons.forEach((button) => {
     button.addEventListener("click", event => {
         const mood = event.target.value
         // console.log(mood)
-    })
-});
 
+        API.getJournalEntries()
+            .then(response => {
+                let filteredArray =
+
+                    response.filter(entry => {
+                        let moodBoolean = false
+                        // console.log(entry.mood)
+                        if (entry.mood === mood) {
+                            moodBoolean = true
+                            console.log("this is working!", mood)
+                        } else if (mood === "All") {
+                            moodBoolean = true
+                        }
+                        return moodBoolean
+                        // console.log(moodBoolean)
+                    })
+
+
+                renderDom.renderJournalEntries(filteredArray)
+
+            })
+    }
+    )
+});
