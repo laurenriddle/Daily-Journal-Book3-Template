@@ -49,5 +49,5 @@ select {
     width: 10%;
 }
 #radioButtons div {
-    flex-basis: 33%;
+    flex-basis: 25%;
 }

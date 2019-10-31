@@ -45,6 +45,10 @@ const htmlElements = {
                 <input type="radio" name="moodButton" value="Ok">
                 <label for="date-input">Ok</label>
             </div>
+            <div>
+                <input type="radio" name="moodButton" value="All">
+                <label for="date-input">All</label>
+            </div>
         </div>
         </fieldset>
         
