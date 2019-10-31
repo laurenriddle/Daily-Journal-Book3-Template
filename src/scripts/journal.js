@@ -27,23 +27,16 @@ radioButtons.forEach((button) => {
         const mood = event.target.value
         // console.log(mood)
         API.getJournalEntries()
-        .then(response => response.forEach((entries) => {
-            console.log(entries.mood)
-            if (entries.mood === mood) {
+        .then(response => response.filter(entry => { 
+            let moodBoolean = false
+            // console.log(entry.mood)
+            if (entry.mood === mood) {
+                moodBoolean = true 
                 console.log("this is working!",mood)
-            } else {
-                console.log("this isn't working")
-            }
-        }))
-
-        // .then(response => response.filter(response => {
-        //     if(response.mood === mood) {
-        //         return response
-        //     }
-        // })
-
-        // console.log(mood)
-    // )
-})
-});
-
+            } 
+            // return moodBoolean
+            console.log(moodBoolean)
+        })
+            
+        )}
+)});
