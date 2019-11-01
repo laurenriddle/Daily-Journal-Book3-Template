@@ -17,7 +17,11 @@ const API = {
           method: "DELETE"
       })
           .then(response => response.json())
-  }
+  },
+  getSingleJournalEntry(entryId) {
+    return fetch(`http://localhost:3000/entries/${entryId}`)
+        .then(response => response.json())
+}
   
 }
 export default API

@@ -1,8 +1,12 @@
+const searchFormContainer = document.querySelector("#searchFormContainer")
+
 const htmlElements = {
-    buildAndAppendSearchForm() {
-        const searchForm =
+    buildAndAppendSearchForm(entry) {
+        let searchForm =
             `<h1>Daily Journal</h1>
     <form>
+        <input type="hidden" name="id-input" id="id">
+
         <fieldset>
             <label for="date-input">Date of entry:</label>
             <input type="date" name="date-input" id="date" required>
@@ -24,9 +28,14 @@ const htmlElements = {
             </select>
         </fieldset>
         </form>
-        <button>Record Journal Entry</button>`
-        const searchFormContainer = document.querySelector("#searchFormContainer")
-        searchFormContainer.innerHTML = searchForm
+        <button id="newEntryButton">Record New Journal Entry</button>`
+
+        if (entry === "edit") {
+           searchFormContainer.innerHTML = "" 
+           searchFormContainer.innerHTML = searchForm += `<button id="saveChanges">Save Changes</button>`
+        } else {
+            searchFormContainer.innerHTML = searchForm
+        }
     }, buildAndAppendFilterElement() {
         const filterHtml =
             `

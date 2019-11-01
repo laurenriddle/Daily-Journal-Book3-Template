@@ -21,8 +21,9 @@ API.getJournalEntries()
 
    
 
-const saveJournalEntryButton = document.querySelector("button")
+const saveJournalEntryButton = document.querySelector("#newEntryButton")
 saveJournalEntryButton.addEventListener("click", saveObject.postEntry)
 eventListeners.radioButtonsEventListener()
 eventListeners.deleteButtonsEventListener()
+eventListeners.editButtonEventListener()
 
