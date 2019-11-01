@@ -27,11 +27,11 @@ const eventListeners = {
                             } else if (mood === "All") {
                                 moodBoolean = true
                             }
-                            // return moodBoolean
+                            return moodBoolean
                             // console.log(moodBoolean)
                         })
                         // console.log(filteredArray)
-                        // renderDom.renderJournalEntries(filteredArray)
+                        renderDom.renderJournalEntries(filteredArray)
 
                     })
             }
@@ -60,20 +60,33 @@ const eventListeners = {
                     .then(entry => {
                         defaultElements.buildAndAppendSearchForm("edit")
 
-                        // const date = document.querySelector("#date").value
-                        // const concepts = document.querySelector("#subject").value
-                        // const journalEntry = document.querySelector("#entry").value
-                        // const mood = document.querySelector("#mood").value
+
 
                         document.querySelector("#date").value = entry.date
                         document.querySelector("#subject").value = entry.concept
                         document.querySelector("#entry").value = entry.entry
                         document.querySelector("#mood").value = entry.mood
-
+                        document.querySelector("#id").value = entry.id
                         const saveButton = document.querySelector("#saveChanges")
-                        
-                        saveButton.addEventListener("click", event => {
 
+                        saveButton.addEventListener("click", event => {
+                            let entryID = document.querySelector("#id").value
+                            const date = document.querySelector("#date").value
+                            const concepts = document.querySelector("#subject").value
+                            const journalEntry = document.querySelector("#entry").value
+                            const mood = document.querySelector("#mood").value
+                            const updatedObject = {
+                                date: date,
+                                concept: concepts,
+                                entry: journalEntry,
+                                mood: mood
+                            }
+                            API.editSingleJournalEntry(entryID, updatedObject)
+                            .then(() => {
+                            defaultElements.buildAndAppendSearchForm()
+                            API.getJournalEntries()
+                                .then(response => renderDom.renderJournalEntries(response))
+                            })
                         })
 
                     })

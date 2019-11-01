@@ -20,7 +20,12 @@ const saveObject = {
             }
             API.saveJournalEntry(newJournalEntry)
                 .then(API.getJournalEntries)
-                .then(response => renderDom.renderJournalEntries(response))
+                .then(response => {renderDom.renderJournalEntries(response)
+                    document.querySelector("#date").value = ""
+                    document.querySelector("#subject").value = ""
+                    document.querySelector("#entry").value = ""
+                    document.querySelector("#mood").value = ""
+                })
         }
 
     }

@@ -1,11 +1,11 @@
 {
   "entries": [
     {
-      "id": 1,
-      "date": "2019-07-24",
-      "concept": "Array methods",
-      "entry": "We learned about 4 different array methods today. forEach made sense, but the others still confuse me.",
-      "mood": "Ok"
+      "date": "2019-11-12",
+      "concept": "CRUD",
+      "entry": "Create, Read, Update, Delete",
+      "mood": "Amazing",
+      "id": 1
     },
     {
       "id": 2,

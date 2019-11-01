@@ -21,7 +21,16 @@ const API = {
   getSingleJournalEntry(entryId) {
     return fetch(`http://localhost:3000/entries/${entryId}`)
         .then(response => response.json())
-}
-  
+}, 
+editSingleJournalEntry(entryId, entry) {
+ return fetch(`http://localhost:3000/entries/${entryId}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(entry)
+    })
+    .then(response => response.json())
+}  
 }
 export default API

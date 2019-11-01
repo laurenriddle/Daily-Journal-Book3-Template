@@ -1,3 +1,5 @@
+import saveObject from "./saveEntry.js"
+
 const searchFormContainer = document.querySelector("#searchFormContainer")
 
 const htmlElements = {
@@ -28,13 +30,16 @@ const htmlElements = {
             </select>
         </fieldset>
         </form>
-        <button id="newEntryButton">Record New Journal Entry</button>`
-
+`
         if (entry === "edit") {
            searchFormContainer.innerHTML = "" 
            searchFormContainer.innerHTML = searchForm += `<button id="saveChanges">Save Changes</button>`
         } else {
-            searchFormContainer.innerHTML = searchForm
+            searchFormContainer.innerHTML = "" 
+            searchFormContainer.innerHTML = searchForm += `<button id="newEntryButton">Record New Journal Entry</button>`
+            const saveJournalEntryButton = document.querySelector("#newEntryButton")
+            saveJournalEntryButton.addEventListener("click", saveObject.postEntry)
+
         }
     }, buildAndAppendFilterElement() {
         const filterHtml =
