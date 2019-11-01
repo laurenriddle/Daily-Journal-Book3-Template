@@ -1,25 +1,25 @@
 {
   "entries": [
     {
-      "date": "2019-10-29",
-      "concept": "Factory Functions",
-      "entry": "Factory functions are functions that return objects.",
+      "date": "2019-11-12",
+      "concept": "CRUD",
+      "entry": "Create, Read, Update, Delete",
       "mood": "Amazing",
-      "id": 4
+      "id": 1
     },
     {
-      "date": "2019-10-29",
-      "concept": "Factory Functions",
-      "entry": "Factory functions are functions that return objects.",
-      "mood": "Amazing",
-      "id": 4
+      "id": 2,
+      "date": "2019-08-02",
+      "concept": "Fetch calls",
+      "entry": "How to get data from an API",
+      "mood": "Ok"
     },
     {
-      "date": "2019-10-29",
-      "concept": "Factory Functions",
-      "entry": "Factory functions are functions that return objects.",
-      "mood": "Amazing",
-      "id": 4
+      "id": 3,
+      "date": "2019-07-07",
+      "concept": "CSS Selectors",
+      "entry": "How to use classes and ids to apply CSS to elements on the DOM",
+      "mood": "Ok"
     },
     {
       "date": "2019-10-29",
