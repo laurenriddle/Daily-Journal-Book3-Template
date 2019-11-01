@@ -50,27 +50,34 @@ const eventListeners = {
                     .then(response => renderDom.renderJournalEntries(response))
             }
         })
-    }, 
-    editButtonEventListener(){
+    },
+    editButtonEventListener() {
         logArticle.addEventListener("click", event => {
-            if (event.target.id.startsWith("editButton--")) { 
+            if (event.target.id.startsWith("editButton--")) {
                 const entryToEdit = event.target.id.split("--")[1]
 
                 API.getSingleJournalEntry(entryToEdit)
-                .then(entry => { defaultElements.buildAndAppendSearchForm("edit")
-                
-                // const date = document.querySelector("#date").value
-                // const concepts = document.querySelector("#subject").value
-                // const journalEntry = document.querySelector("#entry").value
-                // const mood = document.querySelector("#mood").value
+                    .then(entry => {
+                        defaultElements.buildAndAppendSearchForm("edit")
 
-                document.querySelector("#date").value = entry.date
-                console.log(entry.date)
-                document.querySelector("#subject").value = entry.concept
-                document.querySelector("#entry").value = entry.entry
-                document.querySelector("#mood").value = entry.mood
-            })
-                
+                        // const date = document.querySelector("#date").value
+                        // const concepts = document.querySelector("#subject").value
+                        // const journalEntry = document.querySelector("#entry").value
+                        // const mood = document.querySelector("#mood").value
+
+                        document.querySelector("#date").value = entry.date
+                        document.querySelector("#subject").value = entry.concept
+                        document.querySelector("#entry").value = entry.entry
+                        document.querySelector("#mood").value = entry.mood
+
+                        const saveButton = document.querySelector("#saveChanges")
+                        
+                        saveButton.addEventListener("click", event => {
+
+                        })
+
+                    })
+
             }
         })
     }
