@@ -110,10 +110,10 @@ const eventListeners = {
                         response.forEach(entry => {
                             // console.log("first Entry", entry)
                             for (const value of Object.values(entry)) {
-                                // console.log("value", value)
+                                console.log("value", value)
                                 // console.log("second entry", entry)
 
-                                if (value === searchTerm) {
+                                if (value == searchTerm) {
                                     entryArray.push(entry)
                                     // console.log("entry", entry)
                                 } else if (event.target.value === "") {
