@@ -6,6 +6,7 @@ import defaultElements from "./createForm.js"
 const radioButtons = document.getElementsByName("moodButton")
 const logArticle = document.querySelector(".entryLog")
 
+
 const eventListeners = {
     radioButtonsEventListener() {
         radioButtons.forEach((button) => {
@@ -61,15 +62,18 @@ const eventListeners = {
                         defaultElements.buildAndAppendSearchForm("edit")
 
 
-
+                        // set the values of the input 
                         document.querySelector("#date").value = entry.date
                         document.querySelector("#subject").value = entry.concept
                         document.querySelector("#entry").value = entry.entry
                         document.querySelector("#mood").value = entry.mood
                         document.querySelector("#id").value = entry.id
+                        // get a reference to the save button
                         const saveButton = document.querySelector("#saveChanges")
 
+                        // attach event listener to save button
                         saveButton.addEventListener("click", event => {
+                            // get values of input fields
                             let entryID = document.querySelector("#id").value
                             const date = document.querySelector("#date").value
                             const concepts = document.querySelector("#subject").value
@@ -82,19 +86,49 @@ const eventListeners = {
                                 mood: mood
                             }
                             API.editSingleJournalEntry(entryID, updatedObject)
-                            .then(() => {
-                            defaultElements.buildAndAppendSearchForm()
-                            API.getJournalEntries()
-                                .then(response => renderDom.renderJournalEntries(response))
-                            })
+                                .then(() => {
+                                    defaultElements.buildAndAppendSearchForm()
+                                    API.getJournalEntries()
+                                        .then(response => renderDom.renderJournalEntries(response))
+                                })
                         })
 
                     })
 
             }
         })
+    },
+    searchInputEventListener() {
+        searchInput.addEventListener("keypress", event => {
+            if (event.charCode === 13) {
+                const searchTerm = event.target.value
+                // console.log(searchTerm)
+                API.getJournalEntries()
+                    .then(response => {
+                        let entryArray = []
+                        // console.log("response", response)
+                        response.forEach(entry => {
+                            // console.log("first Entry", entry)
+                            for (const value of Object.values(entry)) {
+                                // console.log("value", value)
+                                // console.log("second entry", entry)
+
+                                if (value === searchTerm) {
+                                    entryArray.push(entry)
+                                    // console.log("entry", entry)
+                                } else if (event.target.value === "") {
+                                    API.getJournalEntries()
+                                        .then(response => renderDom.renderJournalEntries(response))
+
+                                }
+                            }
+                        })
+                        renderDom.renderJournalEntries(entryArray)
+                    })
+            }
+        })
+
+
     }
-
 }
-
 export default eventListeners
