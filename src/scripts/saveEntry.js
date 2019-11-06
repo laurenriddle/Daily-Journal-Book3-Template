@@ -1,8 +1,13 @@
+/*
+    Purpose: To POST a single journal entry and re-render the entries on the DOM
+*/
+
 import renderDom from "./entriesDOM.js"
 import API from "./data.js"
 
 const saveObject = {
     postEntry() {
+        // To POST a single journal entry and re-render the entries on the DOM
         const date = document.querySelector("#date").value
         const subject = document.querySelector("#subject").value
         const entry = document.querySelector("#entry").value

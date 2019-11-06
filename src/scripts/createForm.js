@@ -1,9 +1,15 @@
 import saveObject from "./saveEntry.js"
+/*
+    Function 1 Purpose: To build the form and append it to the DOM
 
+    Function 2 Purpose: To build the radio buttons and search input and append it to the DOM
+
+*/
 const searchFormContainer = document.querySelector("#searchFormContainer")
 
 const htmlElements = {
     buildAndAppendSearchForm(entry) {
+        // this function builds the html for the form and appends it to the DOM
         let searchForm =
             `<h1>Daily Journal</h1>
     <form>
@@ -41,7 +47,9 @@ const htmlElements = {
             saveJournalEntryButton.addEventListener("click", saveObject.postEntry)
 
         }
-    }, buildAndAppendFilterElement() {
+    }, 
+    buildAndAppendFilterElement() {
+        // this function builds and appends the radio buttons and search input
         const filterHtml =
         `
         <div id="filterElements">

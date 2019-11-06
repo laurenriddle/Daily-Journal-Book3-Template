@@ -1,3 +1,14 @@
+/*
+    Function 1 Purpose: Add event listener to radio buttons that filters the entries
+
+    Function 2 Purpose: Add event listener to delete buttons that deletes a single entry
+
+    Function 3 Purpose: Add event listener to edit buttons that populates a form gets the values of the form after editing and PUTs them back into the API
+
+    Function 4 Purpose: Add an event listener to the search input that search through the entries when you press enter
+*/
+
+
 import API from "./data.js"
 import renderDom from "./entriesDOM.js"
 import defaultElements from "./createForm.js"
@@ -9,6 +20,7 @@ const logArticle = document.querySelector(".entryLog")
 
 const eventListeners = {
     radioButtonsEventListener() {
+        // Add event listener to radio buttons that filters the entries
         radioButtons.forEach((button) => {
             button.addEventListener("click", event => {
                 const mood = event.target.value
@@ -40,6 +52,7 @@ const eventListeners = {
         });
     },
     deleteButtonsEventListener() {
+        // Add event listener to delete buttons that deletes a single entry
         logArticle.addEventListener("click", event => {
             if (event.target.id.startsWith("deleteButton--")) {
                 // Extract entry id from the button's id attribute
@@ -53,6 +66,7 @@ const eventListeners = {
         })
     },
     editButtonEventListener() {
+        // add event listener to edit buttons that populates a form gets the values of the form after editing and PUTs them back into the API
         logArticle.addEventListener("click", event => {
             if (event.target.id.startsWith("editButton--")) {
                 const entryToEdit = event.target.id.split("--")[1]
@@ -99,6 +113,7 @@ const eventListeners = {
         })
     },
     searchInputEventListener() {
+        // add an event listener to the search input that search through the entries when you press enter
         searchInput.addEventListener("keypress", event => {
             if (event.charCode === 13) {
                 const searchTerm = event.target.value

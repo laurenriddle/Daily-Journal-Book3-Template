@@ -1,10 +1,26 @@
+/*
+    Function 1 Purpose: To GET all entries
+
+    Function 2 Purpose: To POST a new entry
+
+    Function 3 Purpose: To DELETE and existing entry
+
+    Function 4 Purpose: To GET a single existing entry
+
+    Function 5 Purpose: To PUT an existing entry
+
+*/
+
+
 const API = {
   getJournalEntries() {
+    // GET all journal entries
     return fetch("http://localhost:3000/entries")
       .then(response => response.json())
   },
   saveJournalEntry(entry) {
-    return fetch("http://localhost:3000/entries", { // Replace "url" with your API's URL
+    // perform a POST to save a new journal entry
+    return fetch("http://localhost:3000/entries", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -13,16 +29,19 @@ const API = {
     })
   },
   deleteSingleJournalEntry(entryId) {
+    // perform a DELETE to delete a journal entry
       return fetch(`http://localhost:3000/entries/${entryId}`, {
           method: "DELETE"
       })
           .then(response => response.json())
   },
   getSingleJournalEntry(entryId) {
+    // GET the journal entry with the specified ID number
     return fetch(`http://localhost:3000/entries/${entryId}`)
         .then(response => response.json())
 }, 
 editSingleJournalEntry(entryId, entry) {
+  // perform a PUT on the journal entry with the specified ID number
  return fetch(`http://localhost:3000/entries/${entryId}`, {
         method: "PUT",
         headers: {

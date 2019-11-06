@@ -1,3 +1,7 @@
+/*
+    Purpose: To create the html for a single entry
+*/
+
 const entryManager = {
 
   makeJournalEntryComponent(journalEntry) {
