@@ -15,12 +15,12 @@
 const API = {
   getJournalEntries() {
     // GET all journal entries
-    return fetch("http://localhost:3000/entries")
+    return fetch("http://localhost:8088/entries")
       .then(response => response.json())
   },
   saveJournalEntry(entry) {
     // perform a POST to save a new journal entry
-    return fetch("http://localhost:3000/entries", {
+    return fetch("http://localhost:8088/entries", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -30,19 +30,19 @@ const API = {
   },
   deleteSingleJournalEntry(entryId) {
     // perform a DELETE to delete a journal entry
-      return fetch(`http://localhost:3000/entries/${entryId}`, {
+      return fetch(`http://localhost:8088/entries/${entryId}`, {
           method: "DELETE"
       })
           .then(response => response.json())
   },
   getSingleJournalEntry(entryId) {
     // GET the journal entry with the specified ID number
-    return fetch(`http://localhost:3000/entries/${entryId}`)
+    return fetch(`http://localhost:8088/entries/${entryId}`)
         .then(response => response.json())
-}, 
+},
 editSingleJournalEntry(entryId, entry) {
   // perform a PUT on the journal entry with the specified ID number
- return fetch(`http://localhost:3000/entries/${entryId}`, {
+ return fetch(`http://localhost:8088/entries${entryId}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
@@ -52,7 +52,7 @@ editSingleJournalEntry(entryId, entry) {
     .then(response => response.json())
 },
 searchAllJournalEntries(userInput){
-  return fetch(`http://localhost:3000/entries?q=${userInput}`)
+  return fetch(`http://localhost:8088/entries?q=${userInput}`)
   .then(response => response.json())
 }
 }

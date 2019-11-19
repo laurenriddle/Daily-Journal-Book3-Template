@@ -22,6 +22,5 @@ API.getJournalEntries()
 eventListeners.radioButtonsEventListener()
 eventListeners.deleteButtonsEventListener()
 eventListeners.editButtonEventListener()
-const searchInput = document.querySelector("#searchInputField")
 eventListeners.searchInputEventListener()
 
