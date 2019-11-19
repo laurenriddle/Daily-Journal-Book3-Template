@@ -39,15 +39,15 @@ const htmlElements = {
 `
         if (entry === "edit") {
             searchFormContainer.innerHTML = ""
-            searchFormContainer.innerHTML = searchForm += `<button id="saveChanges">Save Changes</button>`
+            searchFormContainer.innerHTML = searchForm += `<div id="buttonContainer"><button id="saveChanges">Save Changes</button></div>`
         } else {
             searchFormContainer.innerHTML = ""
-            searchFormContainer.innerHTML = searchForm += `<button id="newEntryButton">Record New Journal Entry</button>`
+            searchFormContainer.innerHTML = searchForm += `<div id="buttonContainer"><button id="newEntryButton">Record New Journal Entry</button></div>`
             const saveJournalEntryButton = document.querySelector("#newEntryButton")
             saveJournalEntryButton.addEventListener("click", saveObject.postEntry)
 
         }
-    }, 
+    },
     buildAndAppendFilterElement() {
         // this function builds and appends the radio buttons and search input
         const filterHtml =

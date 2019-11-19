@@ -15,11 +15,11 @@
       "mood": "Ok"
     },
     {
-      "id": 3,
       "date": "2019-07-07",
       "concept": "CSS Selectors",
       "entry": "How to use classes and ids to apply CSS to elements on the DOM",
-      "mood": "Ok"
+      "mood": "Ok",
+      "id": 3
     },
     {
       "date": "2019-10-29",

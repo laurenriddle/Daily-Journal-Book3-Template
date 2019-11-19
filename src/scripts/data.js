@@ -39,7 +39,7 @@ const API = {
     // GET the journal entry with the specified ID number
     return fetch(`http://localhost:8088/entries/${entryId}`)
         .then(response => response.json())
-}, 
+},
 editSingleJournalEntry(entryId, entry) {
   // perform a PUT on the journal entry with the specified ID number
  return fetch(`http://localhost:8088/entries/${entryId}`, {
