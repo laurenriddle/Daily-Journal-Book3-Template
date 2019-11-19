@@ -1,9 +1,15 @@
 import saveObject from "./saveEntry.js"
+/*
+    Function 1 Purpose: To build the form and append it to the DOM
 
+    Function 2 Purpose: To build the radio buttons and search input and append it to the DOM
+
+*/
 const searchFormContainer = document.querySelector("#searchFormContainer")
 
 const htmlElements = {
     buildAndAppendSearchForm(entry) {
+        // this function builds the html for the form and appends it to the DOM
         let searchForm =
             `<h1>Daily Journal</h1>
     <form>
@@ -32,40 +38,52 @@ const htmlElements = {
         </form>
 `
         if (entry === "edit") {
-           searchFormContainer.innerHTML = "" 
-           searchFormContainer.innerHTML = searchForm += `<button id="saveChanges">Save Changes</button>`
+            searchFormContainer.innerHTML = ""
+            searchFormContainer.innerHTML = searchForm += `<button id="saveChanges">Save Changes</button>`
         } else {
-            searchFormContainer.innerHTML = "" 
+            searchFormContainer.innerHTML = ""
             searchFormContainer.innerHTML = searchForm += `<button id="newEntryButton">Record New Journal Entry</button>`
             const saveJournalEntryButton = document.querySelector("#newEntryButton")
             saveJournalEntryButton.addEventListener("click", saveObject.postEntry)
 
         }
-    }, buildAndAppendFilterElement() {
+    }, 
+    buildAndAppendFilterElement() {
+        // this function builds and appends the radio buttons and search input
         const filterHtml =
-            `
-        <fieldset id="radioButtons">
-            <legend>Filter Journal Entries By Mood</legend>
-            <div id="radioContainer">
-            <div>
-                <input type="radio" name="moodButton" value="Amazing">
-                <label for="date-input">Amazing</label>
+        `
+        <div id="filterElements">
+            <div id="allRadioButtons">
+                <fieldset id="radioButtons">
+                    <legend>Filter Journal Entries By Mood</legend>
+                    <div id="radioContainer">
+                    <div>
+                        <input type="radio" name="moodButton" value="Amazing">
+                        <label for="date-input">Amazing</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="moodButton" value="Great">
+                        <label for="date-input">Great</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="moodButton" value="Ok">
+                        <label for="date-input">Ok</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="moodButton" value="All">
+                        <label for="date-input">All</label>
+                    </div>
+                </div>
+                </fieldset>
             </div>
-            <div>
-                <input type="radio" name="moodButton" value="Great">
-                <label for="date-input">Great</label>
-            </div>
-            <div>
-                <input type="radio" name="moodButton" value="Ok">
-                <label for="date-input">Ok</label>
-            </div>
-            <div>
-                <input type="radio" name="moodButton" value="All">
-                <label for="date-input">All</label>
-            </div>
+            <div id="searchInput">
+            <fieldset>
+
+                <legend>Search Journal Entries</legend>
+                <input type="search" name="search" id="searchInputField">
+            </div> 
+            </fieldset>
         </div>
-        </fieldset>
-        
         `
         const filterContainer = document.querySelector("#filterContainer")
         filterContainer.innerHTML = filterHtml
