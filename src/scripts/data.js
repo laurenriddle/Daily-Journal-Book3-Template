@@ -50,6 +50,10 @@ editSingleJournalEntry(entryId, entry) {
         body: JSON.stringify(entry)
     })
     .then(response => response.json())
-}  
+},
+searchAllJournalEntries(userInput){
+  return fetch(`http://localhost:3000/entries?q=${userInput}`)
+  .then(response => response.json())
+}
 }
 export default API
