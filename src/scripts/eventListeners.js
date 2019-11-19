@@ -76,7 +76,7 @@ const eventListeners = {
                         defaultElements.buildAndAppendSearchForm("edit")
 
 
-                        // set the values of the input
+                        // set the values of the input 
                         document.querySelector("#date").value = entry.date
                         document.querySelector("#subject").value = entry.concept
                         document.querySelector("#entry").value = entry.entry
@@ -114,7 +114,6 @@ const eventListeners = {
     },
     searchInputEventListener() {
         // add an event listener to the search input that search through the entries when you press enter
-        const searchInput = document.querySelector("#searchInputField")
         searchInput.addEventListener("keypress", event => {
             if (event.charCode === 13) {
                 const searchTerm = event.target.value
