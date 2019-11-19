@@ -3,21 +3,21 @@
     {
       "date": "2019-11-12",
       "concept": "CRUD",
-      "entry": "Create, Read, Update, Delete",
+      "entry": "Create, Read, Update, Delete\n\n\n\n\n\n\n\n",
       "mood": "Amazing",
       "id": 1
     },
     {
-      "id": 2,
       "date": "2019-08-02",
       "concept": "Fetch calls",
-      "entry": "How to get data from an API",
-      "mood": "Ok"
+      "entry": "How to get data from an API. Use a fetch call!",
+      "mood": "Ok",
+      "id": 2
     },
     {
       "date": "2019-07-07",
       "concept": "CSS Selectors",
-      "entry": "How to use classes and ids to apply CSS to elements on the DOM",
+      "entry": "How to use classes and ids to apply CSS to elements on the DOM.",
       "mood": "Ok",
       "id": 3
     },
