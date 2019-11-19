@@ -47,7 +47,7 @@ const htmlElements = {
             saveJournalEntryButton.addEventListener("click", saveObject.postEntry)
 
         }
-    }, 
+    },
     buildAndAppendFilterElement() {
         // this function builds and appends the radio buttons and search input
         const filterHtml =
