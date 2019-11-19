@@ -1,22 +1,47 @@
+body {
+    background-image: url('https://freerangestock.com/sample/119517/flat-lay-of-a-vintage-camera-and-spectacles-on-a-weathered-wooden-tabletop.jpg');
+    font-family: 'Cutive Mono', monospace;
+    background-size: contain;
+    background-color: rgba(73, 142, 163, 0.795);
+}
+
 h1 {
     text-align: center;
-    background-color: rgb(92, 162, 184);
+    background-color: rgba(73, 142, 163, 0.795);
     padding: 10px;
     font-size: 40px;
+    border: 2px outset rgba(73, 142, 163, 0.795);
+    font-family: 'Special Elite', cursive;
+
+}
+h3 {
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Special Elite', cursive;
+}
+
+.entryLog {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.singleEntry {
+    flex-basis: 40%;
 }
 
 #journalEntries {
-margin-top: 50px;
+    margin-top: 50px;
 }
 
 fieldset {
     margin: 15px auto;
     font-size: 20px;
-    background-color: rgba(201, 145, 61, 0.685);
+    background-color: rgba(201, 145, 61, 0.747);
+    border: 2px outset rgba(201, 145, 61, 0.747);
 }
 
 input {
-    padding: 10px auto;
     width: 100%;
     height: 25px;
     font-size: 15px;
@@ -29,15 +54,19 @@ textarea {
 }
 
 button {
-    padding: 15px auto;
+    padding: 4px 20px;
     font-size: 20px;
+    background-color: rgba(201, 145, 61, 0.747);
+    border-radius: 30px;
+    font-family: 'Cutive Mono', monospace;
 }
 
 section {
     margin: 20px auto;
-    border: 2px solid black;
+    border: 2px outset rgba(220, 220, 220, 0.781);
     padding: 10px;
-    background-color: gainsboro;
+    background-color: rgba(220, 220, 220, 0.781);
+    text-align: center;
 }
 
 select {
@@ -71,3 +100,11 @@ select {
     flex-basis: 45%;
 }
 
+#buttonContainer {
+    text-align: center;
+}
+
+.details {
+    display: flex;
+    justify-content: space-around;
+}
