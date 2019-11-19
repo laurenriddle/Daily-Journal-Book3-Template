@@ -114,6 +114,7 @@ const eventListeners = {
     },
     searchInputEventListener() {
         // add an event listener to the search input that search through the entries when you press enter
+        const searchInput = document.querySelector("#searchInputField")
         searchInput.addEventListener("keypress", event => {
             if (event.charCode === 13) {
                 const searchTerm = event.target.value
