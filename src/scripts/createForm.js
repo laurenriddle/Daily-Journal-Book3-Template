@@ -11,8 +11,13 @@ const htmlElements = {
     buildAndAppendSearchForm(entry) {
         // this function builds the html for the form and appends it to the DOM
         let searchForm =
-            `<h1>Daily Journal</h1>
-    <form>
+        
+            `
+        <div class="header">
+            <h1>Daily Journal</h1>
+            <p>Cohort 36</p>
+        </div>
+        <form>
         <input type="hidden" name="id-input" id="id">
 
         <fieldset>
