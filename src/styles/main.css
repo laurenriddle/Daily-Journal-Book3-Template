@@ -112,4 +112,5 @@ select {
 }
 .details > p {
     flex-basis: 22%;
+    text-align: center;
 }

@@ -39,14 +39,6 @@
       "moodId": 2,
       "instructorId": 1,
       "id": 5
-    },
-    {
-      "date": "2019-11-20",
-      "concept": "test",
-      "entry": "tests",
-      "moodId": 2,
-      "instructorId": 3,
-      "id": 6
     }
   ],
   "moods": [
