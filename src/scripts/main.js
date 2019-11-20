@@ -16,10 +16,13 @@ htmlElements.buildAndAppendFilterElement()
 // get all journal entries and render them upon the page loading
 API.getJournalEntries()
     .then(response => renderDom.renderJournalEntries(response))
-
+API.getAllMoods()
+.then(moods => {renderDom.renderRadioButtons(moods)
+    eventListeners.radioButtonsEventListener()
+})
 
 // call event listener functions
-eventListeners.radioButtonsEventListener()
+// eventListeners.radioButtonsEventListener()
 eventListeners.deleteButtonsEventListener()
 eventListeners.editButtonEventListener()
 eventListeners.searchInputEventListener()

@@ -2,6 +2,7 @@
     Purpose: To render all journal entries to the DOM
 */
 import entryManager from "./entryComponent.js"
+import htmlElements from "./createForm.js"
 
 const renderDom = {
   renderJournalEntries(entries) {
@@ -15,6 +16,15 @@ const renderDom = {
     // append the html to the container on the DOM
     const logArticle = document.querySelector(".entryLog")
     logArticle.innerHTML = HtmlForAllEntries
+  },
+  renderRadioButtons(moods) {
+    let htmlForAllRadioButtons = ""
+    moods.forEach(mood => {
+       const moodHtml = htmlElements.buildAndAppendRadioButtons(mood)
+       htmlForAllRadioButtons += moodHtml
+    })
+    let radioButtonContainer = document.querySelector("#radioContainer")
+    radioButtonContainer.innerHTML += htmlForAllRadioButtons
   }
 }
 

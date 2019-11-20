@@ -14,36 +14,29 @@ import renderDom from "./entriesDOM.js"
 import defaultElements from "./createForm.js"
 
 
-const radioButtons = document.getElementsByName("moodButton")
 const logArticle = document.querySelector(".entryLog")
 
 
 const eventListeners = {
     radioButtonsEventListener() {
+        const radioButtons = document.getElementsByName("moodButton")
         // Add event listener to radio buttons that filters the entries
         radioButtons.forEach((button) => {
             button.addEventListener("click", event => {
                 const mood = event.target.value
-                // console.log(mood)
+                let moodInt = parseInt(mood)
                 API.getJournalEntries()
                     .then(response => {
-                        // console.log(response)
                         let filteredArray = response.filter(entry => {
                             let moodBoolean = false
-                            // console.log(entry.mood)
-                            if (entry.mood === mood) {
+                            if (entry.mood.id === moodInt) {
                                 moodBoolean = true
-                                // console.log("event.target.value =", mood)
-                                // console.log("entry.mood =", entry.mood)
 
-                                // console.log("this is working!", mood)
-                            } else if (mood === "All") {
+                            } else if (moodInt === 4) {
                                 moodBoolean = true
                             }
                             return moodBoolean
-                            // console.log(moodBoolean)
                         })
-                        // console.log(filteredArray)
                         renderDom.renderJournalEntries(filteredArray)
 
                     })
@@ -80,8 +73,10 @@ const eventListeners = {
                         document.querySelector("#date").value = entry.date
                         document.querySelector("#subject").value = entry.concept
                         document.querySelector("#entry").value = entry.entry
-                        document.querySelector("#mood").value = entry.mood
+                        document.querySelector("#mood").value = entry.moodId
                         document.querySelector("#id").value = entry.id
+                        document.querySelector("#instructor").value = entry.instructorId
+
                         // get a reference to the save button
                         const saveButton = document.querySelector("#saveChanges")
 
@@ -93,11 +88,16 @@ const eventListeners = {
                             const concepts = document.querySelector("#subject").value
                             const journalEntry = document.querySelector("#entry").value
                             const mood = document.querySelector("#mood").value
+                            const moodInt = parseInt(mood)
+                            const instructor = document.querySelector("#instructor").value
+                            const instructorInt = parseInt(instructor)
+
                             const updatedObject = {
                                 date: date,
                                 concept: concepts,
                                 entry: journalEntry,
-                                mood: mood
+                                moodId: moodInt,
+                                instructorId: instructorInt
                             }
                             API.editSingleJournalEntry(entryID, updatedObject)
                                 .then(() => {

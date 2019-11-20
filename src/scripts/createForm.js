@@ -11,7 +11,6 @@ const htmlElements = {
     buildAndAppendSearchForm(entry) {
         // this function builds the html for the form and appends it to the DOM
         let searchForm =
-        
             `
         <div class="header">
             <h1>Daily Journal</h1>
@@ -35,10 +34,18 @@ const htmlElements = {
         <fieldset>
             <label for="mood-input">Mood:</label>
             <select id="mood" name="mood-input" required>
-                <option value="Amazing">Amazing</option>
-                <option value="Great">Great</option>
-                <option value="Ok">Ok</option>
+                <option value="2">Amazing</option>
+                <option value="3">Great</option>
+                <option value="1">Ok</option>
             </select>
+        </fieldset>
+        <fieldset>
+        <label for="mood-input">Instructor:</label>
+        <select id="instructor" name="instructor-input" required>
+            <option value="1">Jisie David</option>
+            <option value="2">Kristin Norris</option>
+            <option value="3">Rose Wisotzky</option>
+        </select>
         </fieldset>
         </form>
 `
@@ -54,44 +61,37 @@ const htmlElements = {
         }
     },
     buildAndAppendFilterElement() {
-        // this function builds and appends the radio buttons and search input
+        // this function builds and appends the search input and the container for the radio buttons
         const filterHtml =
         `
+        <h1 id="journalEntries" class="header">Journal Entries</h1>
         <div id="filterElements">
             <div id="allRadioButtons">
                 <fieldset id="radioButtons">
                     <legend>Filter Journal Entries By Mood</legend>
                     <div id="radioContainer">
-                    <div>
-                        <input type="radio" name="moodButton" value="Amazing">
-                        <label for="date-input">Amazing</label>
                     </div>
-                    <div>
-                        <input type="radio" name="moodButton" value="Great">
-                        <label for="date-input">Great</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="moodButton" value="Ok">
-                        <label for="date-input">Ok</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="moodButton" value="All">
-                        <label for="date-input">All</label>
-                    </div>
-                </div>
                 </fieldset>
             </div>
             <div id="searchInput">
             <fieldset>
-
                 <legend>Search Journal Entries</legend>
                 <input type="search" name="search" id="searchInputField">
+                </fieldset>
             </div> 
-            </fieldset>
         </div>
         `
         const filterContainer = document.querySelector("#filterContainer")
         filterContainer.innerHTML = filterHtml
+    },
+    buildAndAppendRadioButtons(mood) {
+        // This returns the html for the radio buttons
+        return `
+        <div>
+            <input type="radio" name="moodButton" value="${mood.id}">
+            <label for="date-input">${mood.label}</label>
+        </div>
+        `
     }
 }
 export default htmlElements

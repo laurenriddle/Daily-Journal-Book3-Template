@@ -95,6 +95,7 @@ select {
 #filterElements {
     display: flex;
     justify-content: space-between;
+    font-weight: bolder;
 }
 
 #filterElements #allRadioButtons, #filterElements #searchInput {
@@ -108,4 +109,8 @@ select {
 .details {
     display: flex;
     justify-content: space-around;
+}
+.details > p {
+    flex-basis: 22%;
+    text-align: center;
 }

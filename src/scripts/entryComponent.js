@@ -13,8 +13,9 @@ const entryManager = {
         <p>${journalEntry.entry}</p>
         <hr />
         <div class="details">
-        <p>Mood: ${journalEntry.mood}</p>
+        <p>Mood: ${journalEntry.mood.label}</p>
         <p>Date: ${journalEntry.date}</p>
+        <p>Instructor: ${journalEntry.instructor.firstName} ${journalEntry.instructor.lastName}</p>
         </div>
         <button id="editButton--${journalEntry.id}">Edit</button>
         <button id="deleteButton--${journalEntry.id}">Delete</button>
