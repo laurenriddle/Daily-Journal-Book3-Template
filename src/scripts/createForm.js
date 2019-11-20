@@ -62,23 +62,11 @@ const htmlElements = {
                     <legend>Filter Journal Entries By Mood</legend>
                     <div id="radioContainer">
                     <div>
-                        <input type="radio" name="moodButton" value="Amazing">
-                        <label for="date-input">Amazing</label>
+                    <input type="radio" name="moodButton" value="All">
+                    <label for="date-input">All</label>
                     </div>
-                    <div>
-                        <input type="radio" name="moodButton" value="Great">
-                        <label for="date-input">Great</label>
                     </div>
-                    <div>
-                        <input type="radio" name="moodButton" value="Ok">
-                        <label for="date-input">Ok</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="moodButton" value="All">
-                        <label for="date-input">All</label>
-                    </div>
-                </div>
-                </fieldset>
+                    </fieldset>
             </div>
             <div id="searchInput">
             <fieldset>
@@ -91,6 +79,26 @@ const htmlElements = {
         `
         const filterContainer = document.querySelector("#filterContainer")
         filterContainer.innerHTML = filterHtml
+    },
+    buildAndAppendRadioButtons(mood) {
+        return `<div>
+            <input type="radio" name="moodButton" value="${mood.id}">
+            <label for="date-input">${mood.label}</label>
+        </div>`
     }
 }
 export default htmlElements
+
+{/* <div>
+                        <input type="radio" name="moodButton" value="Amazing">
+                        <label for="date-input">Amazing</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="moodButton" value="Great">
+                        <label for="date-input">Great</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="moodButton" value="Ok">
+                        <label for="date-input">Ok</label>
+                    </div>
+                    */}

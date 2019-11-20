@@ -14,36 +14,29 @@ import renderDom from "./entriesDOM.js"
 import defaultElements from "./createForm.js"
 
 
-const radioButtons = document.getElementsByName("moodButton")
 const logArticle = document.querySelector(".entryLog")
 
 
 const eventListeners = {
     radioButtonsEventListener() {
+        const radioButtons = document.getElementsByName("moodButton")
         // Add event listener to radio buttons that filters the entries
         radioButtons.forEach((button) => {
             button.addEventListener("click", event => {
                 const mood = event.target.value
-                // console.log(mood)
+                let moodInt = parseInt(mood)
                 API.getJournalEntries()
                     .then(response => {
-                        // console.log(response)
                         let filteredArray = response.filter(entry => {
                             let moodBoolean = false
-                            // console.log(entry.mood)
-                            if (entry.mood === mood) {
+                            if (entry.mood.id === moodInt) {
                                 moodBoolean = true
-                                // console.log("event.target.value =", mood)
-                                // console.log("entry.mood =", entry.mood)
 
-                                // console.log("this is working!", mood)
                             } else if (mood === "All") {
                                 moodBoolean = true
                             }
                             return moodBoolean
-                            // console.log(moodBoolean)
                         })
-                        // console.log(filteredArray)
                         renderDom.renderJournalEntries(filteredArray)
 
                     })

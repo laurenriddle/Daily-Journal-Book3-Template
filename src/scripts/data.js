@@ -30,30 +30,34 @@ const API = {
   },
   deleteSingleJournalEntry(entryId) {
     // perform a DELETE to delete a journal entry
-      return fetch(`${baseURL}/${entryId}`, {
-          method: "DELETE"
-      })
-          .then(response => response.json())
+    return fetch(`${baseURL}/${entryId}`, {
+      method: "DELETE"
+    })
+      .then(response => response.json())
   },
   getSingleJournalEntry(entryId) {
     // GET the journal entry with the specified ID number
     return fetch(`${baseURL}/${entryId}`)
-        .then(response => response.json())
-},
-editSingleJournalEntry(entryId, entry) {
-  // perform a PUT on the journal entry with the specified ID number
- return fetch(`${baseURL}/${entryId}`, {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(entry)
+      .then(response => response.json())
+  },
+  editSingleJournalEntry(entryId, entry) {
+    // perform a PUT on the journal entry with the specified ID number
+    return fetch(`${baseURL}/${entryId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(entry)
     })
+      .then(response => response.json())
+  },
+  searchAllJournalEntries(userInput) {
+    return fetch(`${baseURL}?q=${userInput}`)
+      .then(response => response.json())
+  },
+  getAllMoods () {
+    return fetch(`http://localhost:8088/moods`)
     .then(response => response.json())
-},
-searchAllJournalEntries(userInput){
-  return fetch(`${baseURL}?q=${userInput}`)
-  .then(response => response.json())
-}
+  }
 }
 export default API
