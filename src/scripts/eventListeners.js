@@ -32,7 +32,7 @@ const eventListeners = {
                             if (entry.mood.id === moodInt) {
                                 moodBoolean = true
 
-                            } else if (mood === "All") {
+                            } else if (moodInt === 4) {
                                 moodBoolean = true
                             }
                             return moodBoolean

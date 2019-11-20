@@ -52,7 +52,7 @@ const API = {
       .then(response => response.json())
   },
   searchAllJournalEntries(userInput) {
-    return fetch(`${baseURL}?q=${userInput}`)
+    return fetch(`${baseURL}?_expand=mood&&q=${userInput}`)
       .then(response => response.json())
   },
   getAllMoods () {

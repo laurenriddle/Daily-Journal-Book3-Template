@@ -53,52 +53,37 @@ const htmlElements = {
         }
     },
     buildAndAppendFilterElement() {
-        // this function builds and appends the radio buttons and search input
+        // this function builds and appends the search input and the container for the radio buttons 
         const filterHtml =
         `
+        <h1 id="journalEntries" class="header">Journal Entries</h1>
         <div id="filterElements">
             <div id="allRadioButtons">
                 <fieldset id="radioButtons">
                     <legend>Filter Journal Entries By Mood</legend>
                     <div id="radioContainer">
-                    <div>
-                    <input type="radio" name="moodButton" value="All">
-                    <label for="date-input">All</label>
                     </div>
-                    </div>
-                    </fieldset>
+                </fieldset>
             </div>
             <div id="searchInput">
             <fieldset>
-
                 <legend>Search Journal Entries</legend>
                 <input type="search" name="search" id="searchInputField">
+                </fieldset>
             </div> 
-            </fieldset>
         </div>
         `
         const filterContainer = document.querySelector("#filterContainer")
         filterContainer.innerHTML = filterHtml
     },
     buildAndAppendRadioButtons(mood) {
-        return `<div>
+        // This returns the html for the radio buttons
+        return `
+        <div>
             <input type="radio" name="moodButton" value="${mood.id}">
             <label for="date-input">${mood.label}</label>
-        </div>`
+        </div>
+        `
     }
 }
 export default htmlElements
-
-{/* <div>
-                        <input type="radio" name="moodButton" value="Amazing">
-                        <label for="date-input">Amazing</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="moodButton" value="Great">
-                        <label for="date-input">Great</label>
-                    </div>
-                    <div>
-                        <input type="radio" name="moodButton" value="Ok">
-                        <label for="date-input">Ok</label>
-                    </div>
-                    */}
