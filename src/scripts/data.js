@@ -57,4 +57,3 @@ searchAllJournalEntries(userInput){
 }
 }
 export default API
-// http://localhost:8088/entries?_expand=mood
