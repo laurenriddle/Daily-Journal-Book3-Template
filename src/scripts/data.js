@@ -10,17 +10,17 @@
     Function 5 Purpose: To PUT an existing entry
 
 */
-
+const baseURL = "http://localhost:8088/entries"
 
 const API = {
   getJournalEntries() {
     // GET all journal entries
-    return fetch("http://localhost:8088/entries")
+    return fetch(`${baseURL}?_expand=mood`)
       .then(response => response.json())
   },
   saveJournalEntry(entry) {
     // perform a POST to save a new journal entry
-    return fetch("http://localhost:8088/entries", {
+    return fetch(`${baseURL}?_expand=mood`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -30,19 +30,19 @@ const API = {
   },
   deleteSingleJournalEntry(entryId) {
     // perform a DELETE to delete a journal entry
-      return fetch(`http://localhost:8088/entries/${entryId}`, {
+      return fetch(`${baseURL}/${entryId}`, {
           method: "DELETE"
       })
           .then(response => response.json())
   },
   getSingleJournalEntry(entryId) {
     // GET the journal entry with the specified ID number
-    return fetch(`http://localhost:8088/entries/${entryId}`)
+    return fetch(`${baseURL}/${entryId}`)
         .then(response => response.json())
 },
 editSingleJournalEntry(entryId, entry) {
   // perform a PUT on the journal entry with the specified ID number
- return fetch(`http://localhost:8088/entries/${entryId}`, {
+ return fetch(`${baseURL}/${entryId}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
@@ -52,8 +52,9 @@ editSingleJournalEntry(entryId, entry) {
     .then(response => response.json())
 },
 searchAllJournalEntries(userInput){
-  return fetch(`http://localhost:8088/entries?q=${userInput}`)
+  return fetch(`${baseURL}?q=${userInput}`)
   .then(response => response.json())
 }
 }
 export default API
+// http://localhost:8088/entries?_expand=mood

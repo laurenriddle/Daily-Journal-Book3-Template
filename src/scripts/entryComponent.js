@@ -13,7 +13,7 @@ const entryManager = {
         <p>${journalEntry.entry}</p>
         <hr />
         <div class="details">
-        <p>Mood: ${journalEntry.mood}</p>
+        <p>Mood: ${journalEntry.mood.label}</p>
         <p>Date: ${journalEntry.date}</p>
         </div>
         <button id="editButton--${journalEntry.id}">Edit</button>

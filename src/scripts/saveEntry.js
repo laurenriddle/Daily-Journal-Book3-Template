@@ -12,6 +12,7 @@ const saveObject = {
         const subject = document.querySelector("#subject").value
         const entry = document.querySelector("#entry").value
         const mood = document.querySelector("#mood").value
+        const moodInt = parseInt(mood)
         if (date === "" || subject === "" || entry === "") {
             alert("Required fields must be filled out.")
         } else if (subject.length >= 30) {
@@ -21,7 +22,7 @@ const saveObject = {
                 "date": date,
                 "concept": subject,
                 "entry": entry,
-                "mood": mood
+                "moodId": moodInt
             }
             API.saveJournalEntry(newJournalEntry)
                 .then(API.getJournalEntries)

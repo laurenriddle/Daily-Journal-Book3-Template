@@ -11,7 +11,6 @@ const htmlElements = {
     buildAndAppendSearchForm(entry) {
         // this function builds the html for the form and appends it to the DOM
         let searchForm =
-        
             `
         <div class="header">
             <h1>Daily Journal</h1>
@@ -35,9 +34,9 @@ const htmlElements = {
         <fieldset>
             <label for="mood-input">Mood:</label>
             <select id="mood" name="mood-input" required>
-                <option value="Amazing">Amazing</option>
-                <option value="Great">Great</option>
-                <option value="Ok">Ok</option>
+                <option value="2">Amazing</option>
+                <option value="3">Great</option>
+                <option value="1">Ok</option>
             </select>
         </fieldset>
         </form>
