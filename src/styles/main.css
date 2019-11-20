@@ -110,3 +110,6 @@ select {
     display: flex;
     justify-content: space-around;
 }
+.details > p {
+    flex-basis: 22%;
+}

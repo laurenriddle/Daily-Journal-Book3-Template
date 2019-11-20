@@ -75,6 +75,8 @@ const eventListeners = {
                         document.querySelector("#entry").value = entry.entry
                         document.querySelector("#mood").value = entry.moodId
                         document.querySelector("#id").value = entry.id
+                        document.querySelector("#instructor").value = entry.instructorId
+
                         // get a reference to the save button
                         const saveButton = document.querySelector("#saveChanges")
 
@@ -87,11 +89,15 @@ const eventListeners = {
                             const journalEntry = document.querySelector("#entry").value
                             const mood = document.querySelector("#mood").value
                             const moodInt = parseInt(mood)
+                            const instructor = document.querySelector("#instructor").value
+                            const instructorInt = parseInt(instructor)
+
                             const updatedObject = {
                                 date: date,
                                 concept: concepts,
                                 entry: journalEntry,
-                                moodId: moodInt
+                                moodId: moodInt,
+                                instructorId: instructorInt
                             }
                             API.editSingleJournalEntry(entryID, updatedObject)
                                 .then(() => {

@@ -15,12 +15,12 @@ const baseURL = "http://localhost:8088/entries"
 const API = {
   getJournalEntries() {
     // GET all journal entries
-    return fetch(`${baseURL}?_expand=mood`)
+    return fetch(`${baseURL}?_expand=mood&&_expand=instructor`)
       .then(response => response.json())
   },
   saveJournalEntry(entry) {
     // perform a POST to save a new journal entry
-    return fetch(`${baseURL}?_expand=mood`, {
+    return fetch(`${baseURL}?_expand=mood&&_expand=instructor`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -52,7 +52,7 @@ const API = {
       .then(response => response.json())
   },
   searchAllJournalEntries(userInput) {
-    return fetch(`${baseURL}?_expand=mood&&q=${userInput}`)
+    return fetch(`${baseURL}??_expand=mood&&_expand=instructor&&q=${userInput}`)
       .then(response => response.json())
   },
   getAllMoods () {

@@ -5,6 +5,7 @@
       "concept": "CRUD",
       "entry": "Create, Read, Update, Delete",
       "moodId": 3,
+      "instructorId": 1,
       "id": 1
     },
     {
@@ -12,6 +13,7 @@
       "concept": "Fetch calls",
       "entry": "How to get data from an API. Use a fetch call!",
       "moodId": 3,
+      "instructorId": 2,
       "id": 2
     },
     {
@@ -19,6 +21,7 @@
       "concept": "CSS Selectors",
       "entry": "How to use classes and ids to apply CSS to elements on the DOM...",
       "moodId": 1,
+      "instructorId": 1,
       "id": 3
     },
     {
@@ -26,6 +29,7 @@
       "concept": "Factory Functions",
       "entry": "Factory functions are functions that return objects.",
       "moodId": 2,
+      "instructorId": 1,
       "id": 4
     },
     {
@@ -33,7 +37,16 @@
       "concept": "REACT",
       "entry": "REACT is a library for building composable user interfaces.",
       "moodId": 2,
+      "instructorId": 1,
       "id": 5
+    },
+    {
+      "date": "2019-11-20",
+      "concept": "test",
+      "entry": "tests",
+      "moodId": 2,
+      "instructorId": 3,
+      "id": 6
     }
   ],
   "moods": [
@@ -52,6 +65,23 @@
     {
       "id": 4,
       "label": "All"
+    }
+  ],
+  "instructors": [
+    {
+      "id": 1,
+      "firstName": "Jisie",
+      "lastName": "David"
+    },
+    {
+      "id": 2,
+      "firstName": "Kristin",
+      "lastName": "Norris"
+    },
+    {
+      "id": 3,
+      "firstName": "Rose",
+      "lastName": "Wisotzky"
     }
   ]
 }

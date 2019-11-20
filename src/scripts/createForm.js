@@ -39,6 +39,14 @@ const htmlElements = {
                 <option value="1">Ok</option>
             </select>
         </fieldset>
+        <fieldset>
+        <label for="mood-input">Instructor:</label>
+        <select id="instructor" name="instructor-input" required>
+            <option value="1">Jisie David</option>
+            <option value="2">Kristin Norris</option>
+            <option value="3">Rose Wisotzky</option>
+        </select>
+        </fieldset>
         </form>
 `
         if (entry === "edit") {
@@ -53,7 +61,7 @@ const htmlElements = {
         }
     },
     buildAndAppendFilterElement() {
-        // this function builds and appends the search input and the container for the radio buttons 
+        // this function builds and appends the search input and the container for the radio buttons
         const filterHtml =
         `
         <h1 id="journalEntries" class="header">Journal Entries</h1>
