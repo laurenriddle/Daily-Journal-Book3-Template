@@ -1,11 +1,11 @@
-  _____        _ _              _                              _ 
- |  __ \      (_) |            | |                            | |
- | |  | | __ _ _| |_   _       | | ___  _   _ _ __ _ __   __ _| |
- | |  | |/ _` | | | | | |  _   | |/ _ \| | | | '__| '_ \ / _` | |
- | |__| | (_| | | | |_| | | |__| | (_) | |_| | |  | | | | (_| | |
- |_____/ \__,_|_|_|\__, |  \____/ \___/ \__,_|_|  |_| |_|\__,_|_|
-                    __/ |                                        
-                   |___/                                         
+#  _____        _ _              _                              _ 
+# |  __ \      (_) |            | |                            | |
+# | |  | | __ _ _| |_   _       | | ___  _   _ _ __ _ __   __ _| |
+# | |  | |/ _` | | | | | |  _   | |/ _ \| | | | '__| '_ \ / _` | |
+# | |__| | (_| | | | |_| | | |__| | (_) | |_| | |  | | | | (_| | |
+# |_____/ \__,_|_|_|\__, |  \____/ \___/ \__,_|_|  |_| |_|\__,_|_|
+#                    __/ |                                        
+#                   |___/                                         
 Welcome to the Daily Journal Application. This website was created to give users a place to create, edit, and delete journal entries. This is a fully functioning CRUD app that uses an API and json-server for persistent data storage. Follow the steps below to download and run the application. 
 ## Setup: Follow these steps exactly
 1. Clone this repository.
