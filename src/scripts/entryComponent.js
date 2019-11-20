@@ -9,7 +9,9 @@ const entryManager = {
     return `
       <section class="singleEntry">
         <h3>${journalEntry.concept}</h3>
+        <hr />
         <p>${journalEntry.entry}</p>
+        <hr />
         <div class="details">
         <p>Mood: ${journalEntry.mood}</p>
         <p>Date: ${journalEntry.date}</p>
