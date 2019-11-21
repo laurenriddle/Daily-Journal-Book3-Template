@@ -52,10 +52,12 @@ const API = {
       .then(response => response.json())
   },
   searchAllJournalEntries(userInput) {
-    return fetch(`${baseURL}??_expand=mood&&_expand=instructor&&q=${userInput}`)
+    // fetch call to query all journal entries
+    return fetch(`${baseURL}?_expand=mood&&_expand=instructor&&q=${userInput}`)
       .then(response => response.json())
   },
   getAllMoods () {
+    // GETs all of the moods from the API
     return fetch(`http://localhost:8088/moods`)
     .then(response => response.json())
   }

@@ -14,7 +14,7 @@ const htmlElements = {
             `
         <div class="header">
             <h1>Daily Journal</h1>
-            <p>Cohort 36</p>
+            <p>Nashville Software School - Cohort 36</p>
         </div>
         <form>
         <input type="hidden" name="id-input" id="id">
